@@ -5,7 +5,6 @@ import { api } from "../../services/api"
 import styles from "./styles.module.scss"
 
 export default function SendMessageForm() {
-
     const [message, setMessage] = useState("")
     const { user, signOut } = useContext(AuthContext)
 
@@ -21,8 +20,7 @@ export default function SendMessageForm() {
 
     return (
         <div className={styles.sendMessageFormWrapper}>
-            <button className={styles.signOutButton}
-                onClick={signOut} >
+            <button className={styles.signOutButton} onClick={signOut}>
                 <VscSignOut size={32} />
             </button>
 
@@ -37,15 +35,18 @@ export default function SendMessageForm() {
                 </span>
             </header>
 
-            <form className={styles.sendMessageForm}
-                onSubmit={handleSendMessage} >
+            <form
+                className={styles.sendMessageForm}
+                onSubmit={handleSendMessage}
+            >
                 <label htmlFor="message">Mensagem</label>
                 <textarea
                     name="message"
                     id="message"
                     placeholder="Qual suas expecttivas para o evento?"
                     value={message}
-                    onChange={e => setMessage(e.target.value)} ></textarea>
+                    onChange={e => setMessage(e.target.value)}
+                ></textarea>
 
                 <button type="submit">Enviar mensagem</button>
             </form>

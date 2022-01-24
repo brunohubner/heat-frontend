@@ -4,11 +4,14 @@ Aplicação frontend desenvolvida com TypeScript e React em um evento Rocketseat
 
 Para executar o frontend localmente em sua máquina antes tenha o repositório do <a href="https://github.com/brunohubner/heat-backend">backend</a> rodando.
 
-- Intalar dependencias do frontend:
-````
+-   Intalar dependencias do frontend:
+
+```
 $ yarn install
-````
-- Rodar localmente:
-````
+```
+
+-   Rodar localmente:
+
+```
 $ yarn dev
-````
+```

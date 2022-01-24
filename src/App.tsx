@@ -9,9 +9,15 @@ export default function App() {
     const { user } = useContext(AuthContext)
 
     return (
-        <main className={`${styles.contentWrapper} ${!!user ? "" : ""}`}> {/* incluir svg */}
+        <main className={`${styles.contentWrapper} ${!!user ? "" : ""}`}>
+            {" "}
+            {/* incluir svg */}
             <MessageList></MessageList>
-            {!!user ? <SendMessageForm></SendMessageForm> : <LoginBox></LoginBox>}
+            {!!user ? (
+                <SendMessageForm></SendMessageForm>
+            ) : (
+                <LoginBox></LoginBox>
+            )}
         </main>
     )
 }

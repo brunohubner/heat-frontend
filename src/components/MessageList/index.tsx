@@ -16,10 +16,11 @@ type Message = {
 const messagesQueue: Message[] = []
 
 const socket = io("http://localhost:3333")
-socket.on("new_message", (newMessage: Message) => messagesQueue.push(newMessage))
+socket.on("new_message", (newMessage: Message) =>
+    messagesQueue.push(newMessage)
+)
 
 export default function MessageList() {
-
     const [messages, setMessages] = useState<Message[]>([])
 
     useEffect(() => {
@@ -39,15 +40,15 @@ export default function MessageList() {
     }, [])
 
     useEffect(() => {
-        api.get<Message[]>("messages/last3")
-            .then(resp => setMessages(resp.data))
+        api.get<Message[]>("messages/last3").then(resp =>
+            setMessages(resp.data)
+        )
     }, [])
 
     return (
         <div className={styles.messageListWrapper}>
             <LogoImg></LogoImg>
             <ul className={styles.messageList}>
-
                 {messages.map((message, i) => {
                     return (
                         <li key={i} className={styles.message}>
@@ -56,7 +57,10 @@ export default function MessageList() {
                             </p>
                             <div className={styles.messageUser}>
                                 <div className={styles.userImage}>
-                                    <img src={message.user.avatar_url} alt={message.user.name} />
+                                    <img
+                                        src={message.user.avatar_url}
+                                        alt={message.user.name}
+                                    />
                                 </div>
                                 <span>{message.user.name}</span>
                             </div>

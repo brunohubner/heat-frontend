@@ -4,7 +4,6 @@ import { useContext } from "react"
 import { AuthContext } from "../../contexts/auth"
 
 export default function LoginBox() {
-
     const { signInUrl } = useContext(AuthContext)
 
     return (
